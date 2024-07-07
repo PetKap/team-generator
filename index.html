@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Team shuffle</title>
@@ -52,8 +52,8 @@
 		    let ele = document.getElementById("players")
 			let sel = document.getElementById("sel")
 			let but = document.getElementById("but")
+
 			ele.style.display = "block"
-			
 			ele.replaceChildren();
 
 			for (let i = 0; i < sel.value / 2; i++) {
@@ -90,10 +90,11 @@
 			div.appendChild(tf)
 		}
 
-		function shuffle(){
+		function shuffle() {
 			let res = document.getElementById("result")
 			let sel = document.getElementById("sel")
-			
+
+			res.style.display = "block"
 			result.replaceChildren()
 			
 			let table = document.createElement("table")
