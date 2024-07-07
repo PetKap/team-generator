@@ -3,7 +3,7 @@
 <head>
 	<title>Team shuffle</title>
 	<style>
-		#players {
+		#players, #result {
 			display: none;
 		}
 		
@@ -41,6 +41,7 @@
 		function players(menu) {
 			if (menu.value == '1') {
 				document.getElementById("players").style.display = "none"
+				document.getElementById("result").style.display = "none"
 				alert("Choose value")
 			} else {
 				createPlayersFields()
