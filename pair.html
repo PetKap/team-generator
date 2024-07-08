@@ -16,10 +16,22 @@
 
 	<!-- Use 3 lines element to open the sidenav -->
 	<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+	<div id="selector">
+		Number of players:
+		<select id="sel" onchange="createPlayersSection(this)">
+			<option value="1">---</option>
+		</select>
+		<br>
+	</div>
+
+	<div id="players"></div>
+
+	<div id="result"></div>
 </div>
 
 <script type="text/javascript">
 	createMenu()
+	addSelectorOptions()
 </script>
 
 </body>

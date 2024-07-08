@@ -10,7 +10,7 @@ function addSelectorOptions() {
 }
 
 function createPlayersSection(menu) {
-	// we want to hide it result every time, when number of players is changed
+	// we want to hide result section every time, when number of players is changed
 	document.getElementById("result").style.display = "none"
 
 	if (menu.value == '1') {
