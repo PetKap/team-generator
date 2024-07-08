@@ -1,0 +1,21 @@
+#players, #result {
+	display: none;
+}
+
+input, button, #result {
+	margin: 10px 0px 0px 0px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
