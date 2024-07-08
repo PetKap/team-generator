@@ -9,17 +9,15 @@
 <body>
 <div id="selector">
 	Number of players:
-	<select id="sel" onchange="players(this)">
+	<select id="sel" onchange="createPlayersSection(this)">
 		<option value="1">---</option>
 	</select>
 	<br>
 </div>
 
-<div id="players">
-</div>
+<div id="players"></div>
 
-<div id="result">
-</div>
+<div id="result"></div>
 
 <script type="text/javascript">
 	addSelectorOptions()

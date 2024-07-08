@@ -1,7 +1,7 @@
 function addSelectorOptions() {
 	let sel = document.getElementById("sel")
 
-	for (let i = 6; i < 17; i++) {
+	for (let i = 6; i <= 18; i++) {
 		let opt = document.createElement("option")
 		opt.value = i
 		opt.innerHTML = i
@@ -9,10 +9,12 @@ function addSelectorOptions() {
 	}
 }
 
-function players(menu) {
+function createPlayersSection(menu) {
+	// we want to hide it result every time, when number of players is changed
+	document.getElementById("result").style.display = "none"
+
 	if (menu.value == '1') {
 		document.getElementById("players").style.display = "none"
-		document.getElementById("result").style.display = "none"
 		alert("Choose value")
 	} else {
 		createPlayersFields()
@@ -32,7 +34,6 @@ function createPlayersFields() {
 	}
 
 	let button = document.createElement("button")
-	button.type = "button"
 	button.innerText = "Shuffle"
 	button.id = "but"
 	button.onclick = function () {
@@ -89,10 +90,6 @@ function shuffle() {
 	res.appendChild(table)
 }
 
-function getRandom() {
-	return Math.floor( Math.random() * 100 ) % 2
-}
-
 function createTableHeader(table) {
 	let tr = document.createElement("tr")
 	let thLeft = document.createElement("th")
@@ -104,4 +101,8 @@ function createTableHeader(table) {
 	tr.appendChild(thLeft)
 	tr.appendChild(thRight)
 	table.appendChild(tr)
+}
+
+function getRandom() {
+	return Math.floor( Math.random() * 100 ) % 2
 }
