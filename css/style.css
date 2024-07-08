@@ -31,3 +31,11 @@ tr:nth-child(even) {
 h1 {
 	text-align: center;
 }
+
+p {
+	margin: 0px;
+}
+
+#txtArea {
+	margin-top: 5px;
+}
