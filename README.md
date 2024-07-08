@@ -1,7 +1,12 @@
 # team-generator
 App used for randomly shuffling players into teams
 
-1. Pair shuffling
+1. <i>Random generator</i><br>
+User writes all players into textfield. One player per line, so they are delimited by new line. Players are then shuffled and completely random assigned to teams.
+<br>Example:<br>
+![image](https://github.com/PetKap/team-generator/assets/25946983/dcc17740-abf9-4722-b1f9-6228e4820bfe)
+
+2. <i>Pair generator</i><br>
 User chooses how many players are going to play. Then fills form with player names as pairs. In pair should be players with similar skill level. If they are in pair it means they will play against each other.
-Example:
+<br>Example:<br>
 ![image](https://github.com/PetKap/team-generator/assets/25946983/aa744345-a1f2-4e70-badf-d33a165e3ea5)
