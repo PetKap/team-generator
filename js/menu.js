@@ -3,7 +3,7 @@ function createMenu() {
 						["Home", "index.html"],
 						["Random generator", "random.html"], 
 						["Pair generator", "pair.html"], 
-						["Tier liest generator", "tier.html"]
+						["Tier list generator", "tier.html"]
 					]
 
 	let nav = document.getElementById("mySidenav")
