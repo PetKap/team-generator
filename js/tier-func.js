@@ -37,7 +37,7 @@ function createTierFields(ele, i) {
 	let tierId = "tier" + index
 	let p = document.createElement("p")
 	let lbl = document.createElement("label")
-	let txt = document.createTextNode("Tier" + index)
+	let txt = document.createTextNode("Tier " + index)
 
 	lbl.htmlFor = tierId
 	lbl.appendChild(txt)
