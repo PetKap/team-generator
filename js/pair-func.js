@@ -1,14 +1,3 @@
-function addSelectorOptions() {
-	let sel = document.getElementById("sel")
-
-	for (let i = 6; i <= 18; i++) {
-		let opt = document.createElement("option")
-		opt.value = i
-		opt.innerHTML = i
-		sel.appendChild(opt)
-	}
-}
-
 function createPlayersSection(menu) {
 	// we want to hide result section every time, when number of players is changed
 	document.getElementById("result").style.display = "none"
@@ -88,19 +77,6 @@ function shuffle() {
 		table.appendChild(tr)
 	}
 	res.appendChild(table)
-}
-
-function createTableHeader(table) {
-	let tr = document.createElement("tr")
-	let thLeft = document.createElement("th")
-	let thRight = document.createElement("th")
-	
-	thLeft.innerText = "Team A"
-	thRight.innerText = "Team B"
-	
-	tr.appendChild(thLeft)
-	tr.appendChild(thRight)
-	table.appendChild(tr)
 }
 
 function getRandom() {
