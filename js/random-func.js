@@ -9,7 +9,7 @@ function shuffleRandom() {
 	createTableHeader(table)
 
 	let players = txtArea.value.split("\n").filter(entry => entry.trim() !== '')
-	shuffle(players)
+	shuffleArray(players)
 
 	for (let i = 0; i < players.length / 2; i++) {
 		let tr = document.createElement("tr")
