@@ -18,8 +18,8 @@ function createPlayersFields() {
 	ele.style.display = "block"
 	ele.replaceChildren();
 
-	for (let i = 0; i < sel.value / 2; i++) {
-		createTextPair(ele, i * 2)
+	for (let i = 0; i < sel.value; i++) {
+		createTierFields(ele, i)
 	}
 
 	let button = document.createElement("button")
@@ -27,59 +27,65 @@ function createPlayersFields() {
 	button.type = "button"
 	button.id = "but"
 	button.onclick = function () {
-		shuffle()
+		shuffleTiers()
 	}
 	ele.appendChild(button)
 }
 
-function createTextPair(div, index) {
-	createTf(div, index)
+function createTierFields(ele, i) {
+	let index = i + 1
+	let tierId = "tier" + index
+	let p = document.createElement("p")
+	let lbl = document.createElement("label")
+	let txt = document.createTextNode("Tier" + index)
 
-	let text = document.createTextNode(" - ")
-	div.appendChild(text)
-	
-	createTf(div, index + 1)
+	lbl.htmlFor = tierId
+	lbl.appendChild(txt)
+	p.appendChild(lbl)
+	ele.appendChild(p)
+
+	let txtArea = document.createElement("textarea")
+	txtArea.id = tierId
+	txtArea.name = tierId
+	txtArea.rows = 4
+	txtArea.cols = 50
+
+	ele.appendChild(txtArea)
 
 	let br = document.createElement("br")
-	div.appendChild(br)
+	ele.appendChild(br)
 }
 
-function createTf(div, index) {
-	let tf = document.createElement("input")
-	tf.type = "text"
-	tf.id = index
-
-	div.appendChild(tf)
-}
-
-function shuffle() {
+function shuffleTiers() {
 	let res = document.getElementById("result")
 	let sel = document.getElementById("sel")
-
 	res.style.display = "block"
 	result.replaceChildren()
-	
+
 	let table = document.createElement("table")
 	createTableHeader(table)
 
-	for (let i = 0; i < sel.value / 2; i++) {
+	let players = []
+	for (let i = 0; i < sel.value; i++) {
+		let txtArea = document.getElementById("tier" + (i + 1))
+		let part = txtArea.value.split("\n").filter(entry => entry.trim() !== '')
+		shuffleArray(part)
+		players.push(...part)
+	}
+
+	for (let i = 0; i < players.length / 2; i++) {
 		let tr = document.createElement("tr")
 		let tdLeft = document.createElement("td")
 		let tdRight = document.createElement("td")
-		let tfLeft = document.getElementById(i * 2)
-		let tfRight = document.getElementById((i * 2) + 1)
-		let rnd = getRandom()
-		
-		tdLeft.innerText = rnd == 1 ? tfLeft.value : tfRight.value
-		tdRight.innerText = rnd == 0 ? tfLeft.value : tfRight.value
+		let leftPlayer = players[i * 2]
+		let rightPlayer = players[(i * 2) + 1]
+
+		tdLeft.innerText = leftPlayer
+		tdRight.innerText = rightPlayer == undefined ? "" : rightPlayer
 		
 		tr.appendChild(tdLeft)
 		tr.appendChild(tdRight)
 		table.appendChild(tr)
 	}
 	res.appendChild(table)
-}
-
-function getRandom() {
-	return Math.floor( Math.random() * 100 ) % 2
 }
