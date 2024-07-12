@@ -8,6 +8,13 @@ function createMenu() {
 
 	let nav = document.getElementById("mySidenav")
 
+	let closebtn = createMenuItem("X", "javascript:void(0)")
+	closebtn.className = "closebtn"
+	closebtn.onclick = function () {
+		closeNav()
+	}
+	nav.appendChild(closebtn)
+
 	menuItems.forEach((menu) => {
 		nav.appendChild(createMenuItem(menu[0], menu[1]))
 	});
@@ -29,11 +36,9 @@ function openNav() {
 		closeNav();
 	} else {
 		nav.style.width = "250px"
-		document.getElementById("main").style.marginLeft = "250px"
 	}
 }
 
 function closeNav() {
-	document.getElementById("mySidenav").style.width = "0"
-	document.getElementById("main").style.marginLeft = "0"
+	document.getElementById("mySidenav").style.width = "0";
 }
