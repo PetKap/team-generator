@@ -3,7 +3,7 @@
 }
 
 #selector {
-	padding: 5px;
+	padding: 5px 0px;
 }
 
 input, button, #result {
@@ -34,6 +34,10 @@ h1 {
 
 p {
 	margin: 0px;
+}
+
+#mainArea {
+	margin-left: 10px;
 }
 
 #txtArea {

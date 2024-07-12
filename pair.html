@@ -18,16 +18,21 @@
 
 	<!-- Use 3 lines element to open the sidenav -->
 	<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Pair generator</strong></div>
-	<div id="selector">
-		Number of players:
-		<select id="sel" onchange="createPlayersSection(this)">
-			<option value="-">---</option>
-		</select>
+	<div id="mainArea">
 		<br>
-	</div>
+		<p><i>Choose how many players are going to play. Then fill form with player names as pairs. In pair should be players with similar skill level. If they are in pair it means they will play against each other.</i></p>
+		<br>
+		<div id="selector">
+			Number of players:
+			<select id="sel" onchange="createPlayersSection(this)">
+				<option value="-">---</option>
+			</select>
+			<br>
+		</div>
 
-	<div id="players"></div>
-	<div id="result"></div>
+		<div id="players"></div>
+		<div id="result"></div>
+	</div>
 </div>
 
 <script type="text/javascript">

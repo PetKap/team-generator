@@ -18,16 +18,21 @@
 
 	<!-- Use 3 lines element to open the sidenav -->
 	<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Tier list generator</strong></div>
-	<div id="selector">
-		Number of tiers:
-		<select id="sel" onchange="createPlayersSection(this)">
-			<option value="-">---</option>
-		</select>
+	<div id="mainArea">
 		<br>
-	</div>
+		<p><i>Choose how many tiers you want to use. Then write all players into textfield per tier. One player per line, so they are delimited by new line. Players are then shuffled per tier and randomly assigned to teams (all players from tier1, then tier2 and so on).</i></p>
+		<br>
+		<div id="selector">
+			Number of tiers:
+			<select id="sel" onchange="createPlayersSection(this)">
+				<option value="-">---</option>
+			</select>
+			<br>
+		</div>
 
-	<div id="players"></div>
-	<div id="result"></div>
+		<div id="players"></div>
+		<div id="result"></div>
+	</div>
 </div>
 
 <script type="text/javascript">
