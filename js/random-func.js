@@ -4,7 +4,7 @@ function shuffleRandom() {
 
 	res.style.display = "block"
 	result.replaceChildren()
-	
+
 	let table = document.createElement("table")
 	createTableHeader(table)
 
@@ -20,7 +20,7 @@ function shuffleRandom() {
 
 		tdLeft.innerText = leftPlayer
 		tdRight.innerText = rightPlayer == undefined ? "" : rightPlayer
-		
+
 		tr.appendChild(tdLeft)
 		tr.appendChild(tdRight)
 		table.appendChild(tr)

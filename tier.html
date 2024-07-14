@@ -11,34 +11,31 @@
 </head>
 
 <body>
+	<div id="main">
+		<div id="mySidenav" class="sidenav"></div>
 
-
-<div id="main">
-	<div id="mySidenav" class="sidenav"></div>
-
-	<!-- Use 3 lines element to open the sidenav -->
-	<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Tier list generator</strong></div>
-	<div id="mainArea">
-		<br>
-		<p><i>Select the number of tiers you want to use. Then, enter all players into a text field per tier, one player per line (delimited by a new line). The players are then shuffled per tier and randomly assigned to teams (all players from tier1, then tier2 and so on).</i></p>
-		<br>
-		<div id="selector">
-			Number of tiers:
-			<select id="sel" onchange="createPlayersSection(this)">
-				<option value="-">---</option>
-			</select>
+		<!-- Use 3 lines element to open the sidenav -->
+		<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Tier list generator</strong></div>
+		<div id="mainArea">
 			<br>
+			<p><i>Select the number of tiers you want to use. Then, enter all players into a text field per tier, one player per line (delimited by a new line). The players are then shuffled per tier and randomly assigned to teams (all players from tier1, then tier2 and so on).</i></p>
+			<br>
+			<div id="selector">
+				Number of tiers:
+				<select id="sel" onchange="createPlayersSection(this)">
+					<option value="-">---</option>
+				</select>
+				<br>
+			</div>
+
+			<div id="players"></div>
+			<div id="result"></div>
 		</div>
-
-		<div id="players"></div>
-		<div id="result"></div>
 	</div>
-</div>
 
-<script type="text/javascript">
-	createMenu()
-	addSelectorOptions(1, 4)
-</script>
-
+	<script type="text/javascript">
+		createMenu()
+		addSelectorOptions(2, 5)
+	</script>
 </body>
 </html>
