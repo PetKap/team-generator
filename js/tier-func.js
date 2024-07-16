@@ -56,7 +56,7 @@ function createTierFields(ele, i) {
 	ele.appendChild(br)
 }
 
-function shuffleTiers() {
+function shuffleTiers(preparedPlayers) {
 	let res = document.getElementById("result")
 	let sel = document.getElementById("sel")
 	res.style.display = "block"
@@ -65,13 +65,7 @@ function shuffleTiers() {
 	let table = document.createElement("table")
 	createTableHeader(table)
 
-	let players = []
-	for (let i = 0; i < sel.value; i++) {
-		let txtArea = document.getElementById("tier" + (i + 1))
-		let part = txtArea.value.split("\n").filter(entry => entry.trim() !== '')
-		shuffleArray(part)
-		players.push(...part)
-	}
+	let players = preparedPlayers == null ? getPlayersFromTiers() : preparedPlayers
 
 	for (let i = 0; i < players.length / 2; i++) {
 		let tr = document.createElement("tr")
@@ -88,4 +82,17 @@ function shuffleTiers() {
 		table.appendChild(tr)
 	}
 	res.appendChild(table)
+}
+
+function getPlayersFromTiers() {
+	let res = []
+
+	for (let i = 0; i < sel.value; i++) {
+		let txtArea = document.getElementById("tier" + (i + 1))
+		let part = txtArea.value.split("\n").filter(entry => entry.trim() !== '')
+		shuffleArray(part)
+		res.push(...part)
+	}
+
+	return res
 }

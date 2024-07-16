@@ -7,8 +7,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/menu.css">
 
-	<script src="js/pair-func.js"></script>
 	<script src="js/common-func.js"></script>
+	<script src="js/tier-func.js"></script>
+	<script src="js/wed-func.js"></script>
 	<script src="js/menu.js"></script>
 
 	<title>Team generator</title>
@@ -19,27 +20,23 @@
 		<div id="mySidenav" class="sidenav"></div>
 
 		<!-- Use 3 lines element to open the sidenav -->
-		<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Pair generator</strong></div>
+		<div style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; <strong id="hdr">Wednesday special</strong></div>
 		<div id="mainArea">
 			<br>
-			<p><i>Select how many players are going to play. Next, complete a form by entering player names in pairs. Ensure that players within each pair have similar skill levels. If two players are paired together, they will compete against each other.</i></p>
+			<p><i>Enter all players into a text field, with one player per line, so they are delimited by new line. The players are then shuffled and randomly assigned to teams.</i></p>
 			<br>
-			<div id="selector">
-				Number of players:
-				<select id="sel" onchange="createPlayersSection(this)">
-					<option value="-">---</option>
-				</select>
-				<br>
-			</div>
+			<p><label for="txtArea">List of players:</label></p>
+			<textarea id="txtArea" name="txtArea" rows="20" cols="50"></textarea>
+			<br>
+			<button type="button" id="btn" onclick="shuffleWednesday()">Shuffle</button>
 
-			<div id="players"></div>
+			<div id="unknownPlayers"></div>
 			<div id="result"></div>
 		</div>
 	</div>
 
 	<script type="text/javascript">
 		createMenu()
-		addSelectorOptions(6, 18)
 	</script>
 </body>
 </html>
