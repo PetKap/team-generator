@@ -33,7 +33,7 @@ function createMenuItem(name, ref) {
 function openNav() {
 	let nav = document.getElementById("mySidenav")
 
-	if (nav.style.width == "250px") {
+	if (nav.style.width === "250px") {
 		closeNav();
 	} else {
 		nav.style.width = "250px"

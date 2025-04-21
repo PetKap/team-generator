@@ -3,7 +3,7 @@ function shuffleRandom() {
 	let txtArea = document.getElementById("txtArea")
 
 	res.style.display = "block"
-	result.replaceChildren()
+	res.replaceChildren()
 
 	let table = document.createElement("table")
 	createTableHeader(table)
@@ -18,8 +18,8 @@ function shuffleRandom() {
 		let leftPlayer = players[i * 2]
 		let rightPlayer = players[(i * 2) + 1]
 
-		tdLeft.innerText = leftPlayer
-		tdRight.innerText = rightPlayer == undefined ? "" : rightPlayer
+		tdLeft.innerText = leftPlayer.toString()
+		tdRight.innerText = rightPlayer === undefined ? "" : rightPlayer.toString()
 
 		tr.appendChild(tdLeft)
 		tr.appendChild(tdRight)

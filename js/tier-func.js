@@ -2,7 +2,7 @@ function createPlayersSection(menu) {
 	// we want to hide result section every time, when number of players is changed
 	document.getElementById("result").style.display = "none"
 
-	if (menu.value == '-') {
+	if (menu.value === '-') {
 		document.getElementById("players").style.display = "none"
 		alert("Choose value")
 	} else {
@@ -13,7 +13,6 @@ function createPlayersSection(menu) {
 function createPlayersFields() {
 	let ele = document.getElementById("players")
 	let sel = document.getElementById("sel")
-	let but = document.getElementById("but")
 
 	ele.style.display = "block"
 	ele.replaceChildren();
@@ -60,12 +59,12 @@ function shuffleTiers(preparedPlayers) {
 	let res = document.getElementById("result")
 	let sel = document.getElementById("sel")
 	res.style.display = "block"
-	result.replaceChildren()
+	res.replaceChildren()
 
 	let table = document.createElement("table")
 	createTableHeader(table)
 
-	let players = preparedPlayers == null ? getPlayersFromTiers() : preparedPlayers
+	let players = preparedPlayers == null ? getPlayersFromTiers(sel) : preparedPlayers
 
 	for (let i = 0; i < players.length / 2; i++) {
 		let tr = document.createElement("tr")
@@ -75,7 +74,7 @@ function shuffleTiers(preparedPlayers) {
 		let rightPlayer = players[(i * 2) + 1]
 
 		tdLeft.innerText = leftPlayer
-		tdRight.innerText = rightPlayer == undefined ? "" : rightPlayer
+		tdRight.innerText = rightPlayer === undefined ? "" : rightPlayer
 		
 		tr.appendChild(tdLeft)
 		tr.appendChild(tdRight)
@@ -84,7 +83,7 @@ function shuffleTiers(preparedPlayers) {
 	res.appendChild(table)
 }
 
-function getPlayersFromTiers() {
+function getPlayersFromTiers(sel) {
 	let res = []
 
 	for (let i = 0; i < sel.value; i++) {

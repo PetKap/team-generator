@@ -2,7 +2,7 @@ function createPlayersSection(menu) {
 	// we want to hide result section every time, when number of players is changed
 	document.getElementById("result").style.display = "none"
 
-	if (menu.value == '-') {
+	if (menu.value === '-') {
 		document.getElementById("players").style.display = "none"
 		alert("Choose value")
 	} else {
@@ -13,7 +13,6 @@ function createPlayersSection(menu) {
 function createPlayersFields() {
 	let ele = document.getElementById("players")
 	let sel = document.getElementById("sel")
-	let but = document.getElementById("but")
 
 	ele.style.display = "block"
 	ele.replaceChildren();
@@ -57,7 +56,7 @@ function shuffle() {
 	let sel = document.getElementById("sel")
 
 	res.style.display = "block"
-	result.replaceChildren()
+	res.replaceChildren()
 	
 	let table = document.createElement("table")
 	createTableHeader(table)
@@ -66,12 +65,12 @@ function shuffle() {
 		let tr = document.createElement("tr")
 		let tdLeft = document.createElement("td")
 		let tdRight = document.createElement("td")
-		let tfLeft = document.getElementById(i * 2)
-		let tfRight = document.getElementById((i * 2) + 1)
+		let tfLeft = document.getElementById((i * 2).toString())
+		let tfRight = document.getElementById(((i * 2) + 1).toString())
 		let rnd = getRandom()
 		
-		tdLeft.innerText = rnd == 1 ? tfLeft.value : tfRight.value
-		tdRight.innerText = rnd == 0 ? tfLeft.value : tfRight.value
+		tdLeft.innerText = rnd === 1 ? tfLeft.value : tfRight.value
+		tdRight.innerText = rnd === 0 ? tfLeft.value : tfRight.value
 		
 		tr.appendChild(tdLeft)
 		tr.appendChild(tdRight)
